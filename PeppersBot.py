@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 #Sacar informacion delicada del .env
 
 load_dotenv()
-TOKEN = os.getenv('token')
+TOKEN = os.getenv('tokenMain')
 SERVIDOR = os.getenv('servidor')
 
 bot = commands.Bot(command_prefix="!")
