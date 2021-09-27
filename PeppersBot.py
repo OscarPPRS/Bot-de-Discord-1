@@ -23,6 +23,9 @@ bot = commands.Bot(command_prefix="!")
 async def on_ready():
     servidor = discord.utils.get(bot.guilds, name=SERVIDOR)
     print("\n", bot.user, " se ha conectado al servidor ", servidor.name, " con una ID ", servidor.id, "\n" )
+
+#Código para que el bot liste los usuarios
+
 #    print("Lista de usuarios: \n" )
 #    for usuario in servidor.members:
 #        print("\t -",usuario.name, ' ')
@@ -41,7 +44,7 @@ async def on_message(mensaje):
         "Mi nombre es 3pbot, relaciones cibernéticas-humanas",
         "Permíteme contarte mi teoría sobre el último capítulo de One Piece"
     ]
-    if "3pbot dime algo" in mensaje.content.lower():
+    if "moroes dime algo" in mensaje.content.lower():
         respuesta = random.choice(saludosDeBot)
         await mensaje.channel.send(respuesta)
 
@@ -63,9 +66,6 @@ async def roll(ctx, inputDados: str):
 
     cantidadDados = int(arrayInput[0])
     carasDado = int(arrayInput[1])
-
-
-
 
     if cantidadDados < 1 or carasDado < 1:
         await ctx.send("Las caras y la cantidad de dados tienen que ser mayores a 0.")
