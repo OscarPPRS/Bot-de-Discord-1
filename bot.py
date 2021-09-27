@@ -44,10 +44,10 @@ async def on_message(mensaje):
         "ola k ase",
         "Léete Mistborne",
         "Léete Berserk",
-        "Mi nombre es 3pbot, relaciones cibernéticas-humanas",
+        "Mi nombre es " + var.nombreBot + ", relaciones cibernéticas-humanas",
         "Permíteme contarte mi teoría sobre el último capítulo de One Piece"
     ]
-    if (var.nombreBot + " dime algo") in mensaje.content.lower():
+    if (var.nombreBot + " dime algo").lower() in mensaje.content.lower():
         respuesta = random.choice(saludosDeBot)
         await mensaje.channel.send(respuesta)
 
