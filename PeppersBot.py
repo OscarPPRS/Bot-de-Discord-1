@@ -3,6 +3,8 @@
 import os
 import random
 
+import var
+
 import discord
 from discord import message
 from discord.ext import commands
@@ -14,6 +16,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('token')
 SERVIDOR = os.getenv('servidor')
+
 
 bot = commands.Bot(command_prefix="!")
 
@@ -44,7 +47,7 @@ async def on_message(mensaje):
         "Mi nombre es 3pbot, relaciones cibernéticas-humanas",
         "Permíteme contarte mi teoría sobre el último capítulo de One Piece"
     ]
-    if "moroes dime algo" in mensaje.content.lower():
+    if (var.nombreBot + " dime algo") in mensaje.content.lower():
         respuesta = random.choice(saludosDeBot)
         await mensaje.channel.send(respuesta)
 

@@ -1,2 +1,4 @@
 
 .env
+var.py
+__pycache__/var.cpython-39.pyc
