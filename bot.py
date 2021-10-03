@@ -4,6 +4,7 @@ import os
 import random
 
 import var
+from Personaje import Personaje
 
 import discord
 from discord import message
@@ -85,5 +86,16 @@ async def roll(ctx, inputDados: str):
             cadena += str(x)
 
         await ctx.send(cadena)
+
+
+@bot.command(name="personaje", help="Crea un personaje.")
+async def comando(ctx, nombre:str):
+    
+    P1 = Personaje(nombre)
+
+    P2 = Personaje("Yugen")
+
+    await P1.Combate(P2,ctx, bot)
+    
 
 bot.run(TOKEN)
